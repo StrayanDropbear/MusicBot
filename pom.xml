@@ -48,6 +48,7 @@
             <groupId>com.jagrosh</groupId>
             <artifactId>jda-utilities</artifactId>
             <version>3.1.0</version>
+	    <scope>compile</scope>
             <type>pom</type>
         </dependency>
 
