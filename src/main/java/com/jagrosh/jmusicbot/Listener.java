@@ -87,24 +87,20 @@ public class Listener extends ListenerAdapter
                 catch(Exception ignored) {} // ignored
             }, 0, 24, TimeUnit.HOURS);
         }
-        if (bot.getConfig().useYoutubeOauth2())
+         if (bot.getConfig().useYoutubeOauth2())
         {
             YoutubeOauth2TokenHandler.Data data = bot.getYouTubeOauth2Handler().getData();
             if (data != null)
             {
-                try
-                {
-                    PrivateChannel channel = bot.getJDA().openPrivateChannelById(bot.getConfig().getOwnerId()).complete();
-                    channel
-                       .sendMessage(
-                           "# DO NOT AUTHORISE THIS WITH YOUR MAIN GOOGLE ACCOUNT!!!\n"
-                           + "## Create or use an alternative/burner Google account!\n"
-                           + "To give JMusicBot access to your Google account, go to "
-                           + data.getAuthorisationUrl()
-                           + " and enter the code **" + data.getCode() + "**")
-                       .queue();
-                }
-                catch (Exception ignored) {}
+                PrivateChannel channel = bot.getJDA().openPrivateChannelById(bot.getConfig().getOwnerId()).complete();
+                channel
+                   .sendMessage(
+                       "# DO NOT AUTHORISE THIS WITH YOUR MAIN GOOGLE ACCOUNT!!!\n"
+                       + "## Create or use an alternative/burner Google account!\n"
+                       + "To give JMusicBot access to your Google account, go to "
+                       + data.getAuthorisationUrl()
+                       + " and enter the code **" + data.getCode() + "**")
+                   .queue();
             }
         }
     }

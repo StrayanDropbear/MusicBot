@@ -56,6 +56,8 @@ public class PlayerManager extends DefaultAudioPlayerManager
     {
         TransformativeAudioSourceManager.createTransforms(bot.getConfig().getTransforms()).forEach(t -> registerSourceManager(t));
 
+        //YoutubeAudioSourceManager yt = new YoutubeAudioSourceManager(true);
+        //yt.setPlaylistPageCount(bot.getConfig().getMaxYTPlaylistPages());
         YoutubeAudioSourceManager yt = setupYoutubeAudioSourceManager();
         registerSourceManager(yt);
 
@@ -73,7 +75,7 @@ public class PlayerManager extends DefaultAudioPlayerManager
         DuncteBotSources.registerAll(this, "en-US");
     }
 
-    private YoutubeAudioSourceManager setupYoutubeAudioSourceManager()
+     private YoutubeAudioSourceManager setupYoutubeAudioSourceManager()
     {
         YoutubeAudioSourceManager yt = new YoutubeAudioSourceManager(true);
         yt.setPlaylistPageCount(bot.getConfig().getMaxYTPlaylistPages());
@@ -107,7 +109,7 @@ public class PlayerManager extends DefaultAudioPlayerManager
         }
         return yt;
     }
-
+    
     public Bot getBot()
     {
         return bot;

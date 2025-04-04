@@ -42,6 +42,7 @@ public class BotConfig
     private String token, prefix, altprefix, helpWord, playlistsFolder, logLevel,
             successEmoji, warningEmoji, errorEmoji, loadingEmoji, searchingEmoji,
             evalEngine;
+    //private boolean stayInChannel, songInGame, npImages, updatealerts, useEval, dbots;
     private boolean youtubeOauth2, stayInChannel, songInGame, npImages, updatealerts, useEval, dbots;
     private long owner, maxSeconds, aloneTimeUntilStop;
     private int maxYTPlaylistPages;
@@ -293,7 +294,7 @@ public class BotConfig
     {
         return helpWord;
     }
-    
+
     public boolean useYoutubeOauth2()
     {
         return youtubeOauth2;

@@ -46,12 +46,12 @@ public class Bot
     private final NowplayingHandler nowplaying;
     private final AloneInVoiceHandler aloneInVoiceHandler;
     private final YoutubeOauth2TokenHandler youTubeOauth2TokenHandler;
-    private final GUI gui;
     
     private boolean shuttingDown = false;
     private JDA jda;
+    private GUI gui;
     
-    public Bot(EventWaiter waiter, BotConfig config, SettingsManager settings, GUI gui)
+    public Bot(EventWaiter waiter, BotConfig config, SettingsManager settings)
     {
         this.waiter = waiter;
         this.config = config;
@@ -66,7 +66,6 @@ public class Bot
         this.nowplaying.init();
         this.aloneInVoiceHandler = new AloneInVoiceHandler(this);
         this.aloneInVoiceHandler.init();
-        this.gui = gui;
     }
     
     public BotConfig getConfig()
@@ -108,7 +107,7 @@ public class Bot
     {
         return aloneInVoiceHandler;
     }
-
+    
     public YoutubeOauth2TokenHandler getYouTubeOauth2Handler()
     {
         return youTubeOauth2TokenHandler;
@@ -161,5 +160,10 @@ public class Bot
     public void setJDA(JDA jda)
     {
         this.jda = jda;
+    }
+    
+    public void setGUI(GUI gui)
+    {
+        this.gui = gui;
     }
 }
