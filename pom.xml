@@ -44,11 +44,13 @@
             <artifactId>JDA</artifactId>
             <version>5.3.1</version>
         </dependency>
-	<dependency>
-		<groupId>com.github.Nagami-Yukki</groupId>
-		<artifactId>JDA-Utilities</artifactId>
-		<version>1.0</version>
-	</dependency>
+        <dependency>
+            <groupId>com.jagrosh</groupId>
+            <artifactId>jda-utilities</artifactId>
+            <version>3.1.0</version>
+	    <scope>compile</scope>
+            <type>pom</type>
+        </dependency>
 
         <!-- Music Dependencies -->
         <dependency>
